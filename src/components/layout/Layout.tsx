@@ -62,7 +62,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer */}
       <footer className="bg-slate-800 text-white p-4">
         <div className="container mx-auto text-center">
-          <p>&copy; 2025 Assessment Portal</p>
+          <p>&copy;Internship Assignment - Divine Lab, IIT Delhi</p>
         </div>
       </footer>
     </div>
