@@ -1,54 +1,140 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Assessment Portal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A hierarchical assessment management system built with React, TypeScript, Redux, and Shadcn UI. This application allows educators to create and manage structured assessments with domains, categories, and multiple-choice questions.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Hierarchical Data Structure**:
+  - Domains (top level, e.g., Technology, Science)
+  - Categories (second level, tied to domains, e.g., Frontend, Backend)
+  - Questions (third level, tied to categories with multiple-choice options)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Complete CRUD Operations**:
+  - Create, read, update, and delete for all entity types
+  - Validation to ensure data integrity
+  - Hierarchical relationship enforcement
+
+- **Modern UI Components**:
+  - Built with Shadcn UI for a clean, accessible interface
+  - Responsive design for all screen sizes
+  - Toast notifications for user feedback
+
+- **State Management**:
+  - Centralized Redux store with Redux Toolkit
+  - Typed state with TypeScript
+  - Async operations using Redux Thunks
+
+## Tech Stack
+
+- **Frontend**:
+  - React 18
+  - TypeScript
+  - Vite (build tool)
+  - React Router v6 (routing)
+  - Shadcn UI (component library)
+  - Tailwind CSS (styling)
+
+- **State Management**:
+  - Redux Toolkit
+  - React-Redux
+
+- **Data Persistence**:
+  - LocalStorage (can be extended to use a backend API)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or newer)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Atharvayadav11/IITDAssg.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Usage
+
+### Managing Domains
+
+1. Navigate to the dashboard
+2. Click "Add Domain" to create a new domain
+3. Enter the domain name and submit
+4. Existing domains can be edited or deleted from the dashboard
+
+### Managing Categories
+
+1. Select a domain or navigate to the "Add Category" page
+2. Select the parent domain
+3. Enter the category name and submit
+4. Categories can be edited or deleted from the domain view
+
+### Managing Questions
+
+1. Select a category or navigate to the "Add Question" page
+2. Select the parent domain and category
+3. Enter the question text
+4. Add at least two options
+5. Mark one option as the correct answer
+6. Submit the question
+7. Questions can be edited or deleted from the category view
+
+## Project Structure
+
+```
+src/
+├── assets/              # Static assets
+├── components/
+│   ├── ui/              # Shadcn UI components
+│   ├── common/          # Reusable components
+│   ├── domains/         # Domain-related components
+│   ├── categories/      # Category-related components
+│   ├── questions/       # Question-related components
+│   └── layout/          # Layout components
+├── redux/
+│   ├── store.ts         # Redux store configuration
+│   └── slices/          # Redux slices for each entity
+│       ├── domainSlice.ts
+│       ├── categorySlice.ts
+│       └── questionSlice.ts
+├── pages/               # Page components
+│   ├── Dashboard.tsx
+│   ├── AddDomain.tsx
+│   ├── AddCategory.tsx
+│   └── AddQuestion.tsx
+├── types/               # TypeScript interfaces
+├── utils/               # Helper functions
+├── hooks/               # Custom hooks
+├── App.tsx              # Main application component
+└── main.tsx             # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Acknowledgments
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- [React](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
 ```
