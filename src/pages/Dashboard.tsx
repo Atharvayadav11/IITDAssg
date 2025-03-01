@@ -20,13 +20,13 @@ import { Domain, Category, Question } from '../types';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../components/ui/collapsible';
+import { Collapsible, CollapsibleContent, } from '../components/ui/collapsible';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogClose } from '../components/ui/dialog';
-import { Search, ChevronDown, ChevronRight, Plus, Trash2, Edit2 } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, Trash2, Edit2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Dashboard: React.FC = () => {
-  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
   const { domains } = useAppSelector(state => state.domains);
   const { categories } = useAppSelector(state => state.categories);
