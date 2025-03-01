@@ -419,7 +419,7 @@ const Dashboard: React.FC = () => {
               className="w-full"
             />
           </div>
-          <DialogFooter className="sm:justify-end">
+          <DialogFooter className="sm:justify-end ">
             <DialogClose asChild>
               <Button variant="outline" onClick={() => setEditingDomain(null)}>
                 Cancel
@@ -432,7 +432,7 @@ const Dashboard: React.FC = () => {
       
       {/* Edit Category Dialog */}
       <Dialog open={!!editingCategory} onOpenChange={(open) => !open && setEditingCategory(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md" style={{backgroundColor: "white"}}>
           <DialogHeader>
             <DialogTitle>Edit Category</DialogTitle>
             <DialogDescription>
@@ -460,7 +460,7 @@ const Dashboard: React.FC = () => {
       
       {/* Edit Question Dialog */}
       <Dialog open={!!editingQuestion} onOpenChange={(open) => !open && setEditingQuestion(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md" style={{backgroundColor: "white"}}>
           <DialogHeader>
             <DialogTitle>Edit Question</DialogTitle>
             <DialogDescription>
@@ -488,7 +488,7 @@ const Dashboard: React.FC = () => {
       
       {/* Delete Domain Confirmation Dialog */}
       <Dialog open={!!deletingDomain} onOpenChange={(open) => !open && setDeletingDomain(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md" style={{backgroundColor: "white"}}>
           <DialogHeader>
             <DialogTitle className="text-red-600">Delete Domain</DialogTitle>
             <DialogDescription>
@@ -510,7 +510,7 @@ const Dashboard: React.FC = () => {
       
       {/* Delete Category Confirmation Dialog */}
       <Dialog open={!!deletingCategory} onOpenChange={(open) => !open && setDeletingCategory(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md" style={{backgroundColor: "white"}}>
           <DialogHeader>
             <DialogTitle className="text-red-600">Delete Category</DialogTitle>
             <DialogDescription>
@@ -532,7 +532,7 @@ const Dashboard: React.FC = () => {
       
       {/* Delete Question Confirmation Dialog */}
       <Dialog open={!!deletingQuestion} onOpenChange={(open) => !open && setDeletingQuestion(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md" style={{backgroundColor: "white"}}>
           <DialogHeader>
             <DialogTitle className="text-red-600">Delete Question</DialogTitle>
             <DialogDescription>
